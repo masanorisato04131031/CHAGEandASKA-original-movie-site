@@ -16,7 +16,6 @@
     body {
       background: #0a0a0a;
       color: #fff;
-      overflow-x: hidden;
     }
 
     header {
@@ -28,27 +27,19 @@
       z-index: 1000;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 20px;
-      letter-spacing: 2px;
-      font-weight: 300;
     }
 
     nav a {
       margin-left: 20px;
       text-decoration: none;
       color: #aaa;
-      transition: 0.3s;
     }
 
     nav a:hover {
       color: #fff;
     }
 
-    /* ===== ヒーロー画像（スライド） ===== */
+    /* ヒーロー */
     .hero {
       height: 100vh;
       position: relative;
@@ -61,22 +52,19 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 1.5s ease-in-out;
+      transition: opacity 1.5s;
     }
 
     .hero img.active {
       opacity: 1;
     }
 
-    /* 画像の上に黒いフィルター */
     .hero::after {
       content: "";
       position: absolute;
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.5);
-      top: 0;
-      left: 0;
     }
 
     .hero-content {
@@ -88,76 +76,46 @@
       text-align: center;
     }
 
-    .hero h2 {
-      font-size: 48px;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 1s;
-    }
-
-    .hero p {
-      color: #ccc;
-      font-size: 16px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 1s;
-    }
-
     section {
       padding: 100px 40px;
       max-width: 1000px;
       margin: auto;
     }
 
-    section h3 {
+    h3 {
       font-size: 28px;
       margin-bottom: 30px;
       border-left: 3px solid #fff;
       padding-left: 15px;
     }
 
-    .about p {
-      line-height: 1.8;
-      color: #bbb;
-    }
-
-    .discography {
+    /* 動画 */
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    .card {
+    .video-card {
       background: #111;
-      padding: 20px;
+      padding: 15px;
       border: 1px solid #222;
-      transition: 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #555;
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    .video-card h4 {
+      margin: 10px 0 5px;
     }
 
     footer {
       text-align: center;
       padding: 40px;
       color: #777;
-      border-top: 1px solid #222;
-    }
-
-    /* スクロールフェード */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
     }
   </style>
 </head>
@@ -167,12 +125,11 @@
 <header>
   <h1>CHAGE & ASKA</h1>
   <nav>
-    <a href="#about">ABOUT</a>
     <a href="#music">MUSIC</a>
   </nav>
 </header>
 
-<!-- ===== 画像スライド部分 ===== -->
+<!-- 画像スライド -->
 <section class="hero">
   <img src="image1.jpg" class="active">
   <img src="image2.jpg">
@@ -180,35 +137,35 @@
   <img src="image4.jpg">
 
   <div class="hero-content">
-    <h2 id="main-title">CHAGE & ASKA</h2>
-    <p id="sub-title">Timeless Voices, Eternal Melodies</p>
+    <h2>CHAGE & ASKA</h2>
+    <p>Timeless Voices, Eternal Melodies</p>
   </div>
 </section>
 
-<section id="about" class="about fade-in">
-  <h3>ABOUT</h3>
-  <p>
-    日本を代表する音楽ユニットとして長年にわたり活躍し、
-    数々の名曲を世に送り出してきた存在。
-    心に響く歌詞と圧倒的なボーカルで、多くの人々に影響を与え続けている。
-  </p>
-</section>
-
-<section id="music" class="fade-in">
+<!-- 動画セクション -->
+<section id="music">
   <h3>DISCOGRAPHY</h3>
-  <div class="discography">
-    <div class="card">
+
+  <div class="video-grid">
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/5Vh9s4q1u8k" allowfullscreen></iframe>
       <h4>SAY YES</h4>
       <p>代表曲のひとつ。</p>
     </div>
-    <div class="card">
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/6bALJxjL8jw" allowfullscreen></iframe>
       <h4>YAH YAH YAH</h4>
-      <p>エネルギッシュな楽曲。</p>
+      <p>エネルギッシュな名曲。</p>
     </div>
-    <div class="card">
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/3w9zHn4vF7E" allowfullscreen></iframe>
       <h4>LOVE SONG</h4>
-      <p>名バラード。</p>
+      <p>心に響くバラード。</p>
     </div>
+
   </div>
 </section>
 
@@ -217,7 +174,7 @@
 </footer>
 
 <script>
-  // ===== 画像スライド =====
+  // 画像スライド
   const images = document.querySelectorAll(".hero img");
   let current = 0;
 
@@ -226,33 +183,6 @@
     current = (current + 1) % images.length;
     images[current].classList.add("active");
   }, 3000);
-
-  // ===== タイトルフェード =====
-  window.addEventListener("load", () => {
-    const title = document.getElementById("main-title");
-    const sub = document.getElementById("sub-title");
-
-    title.style.opacity = "1";
-    title.style.transform = "translateY(0)";
-
-    setTimeout(() => {
-      sub.style.opacity = "1";
-      sub.style.transform = "translateY(0)";
-    }, 500);
-  });
-
-  // ===== スクロールフェード =====
-  const elements = document.querySelectorAll('.fade-in');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-      }
-    });
-  });
-
-  elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
