@@ -19,15 +19,8 @@ nav a{margin-left:20px;text-decoration:none;color:#aaa;}
 nav a:hover{color:#fff;}
 
 .hero{height:100vh;position:relative;overflow:hidden;}
-.hero img{
-position:absolute;width:100%;height:100%;
-object-fit:cover;opacity:0;transition:1.5s;
-}
+.hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1.5s;}
 .hero img.active{opacity:1;}
-.hero::after{
-content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,0.5);
-}
 
 .hero-content{
 position:absolute;top:50%;left:50%;
@@ -42,30 +35,86 @@ font-size:28px;margin-bottom:30px;
 border-left:3px solid #fff;padding-left:15px;
 }
 
+/* 動画カード */
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
 .video-card{
 background:#111;padding:15px;border:1px solid #222;
-transition:.3s;
+cursor:pointer;transition:.3s;
 }
-.video-card:hover{transform:translateY(-5px);border-color:#555;}
-
-.video-wrapper{position:relative;padding-top:56.25%;}
-.video-wrapper iframe{
-position:absolute;top:0;left:0;width:100%;height:100%;
-border:none;
+.video-card:hover{
+transform:translateY(-5px) scale(1.02);
+border-color:#888;
 }
 
-.history{margin-top:80px;}
+.video-thumb{
+width:100%;
+height:180px;
+background-size:cover;
+background-position:center;
+}
+
+/* モーダル */
+.modal{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+.modal iframe{
+width:80%;
+height:60%;
+}
+
+/* HISTORY */
 .timeline{border-left:2px solid #555;padding-left:20px;}
-.timeline-item{margin-bottom:25px;}
+.timeline-item{
+margin-bottom:40px;
+opacity:0;
+transform:translateY(40px);
+transition:0.6s;
+}
 
-.timeline-item h4{font-size:18px;margin-bottom:5px;}
-.timeline-item p{color:#bbb;line-height:1.6;}
+.timeline-item.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.timeline-item img{
+width:100%;
+margin-top:10px;
+border-radius:10px;
+}
+
+.timeline-item h4{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.timeline-item p{
+color:#bbb;
+line-height:1.7;
+}
+
+/* 曲リンク */
+.song{
+color:#4fc3f7;
+cursor:pointer;
+text-decoration:underline;
+}
+
+/* レスポンシブ */
+@media(max-width:768px){
+.modal iframe{width:95%;height:50%;}
+}
 
 footer{text-align:center;padding:40px;color:#777;}
 </style>
@@ -91,136 +140,110 @@ footer{text-align:center;padding:40px;color:#777;}
 </section>
 
 <section id="music">
-<h3>DISCOGRAPHY</h3>
+
+<h3>MUSIC</h3>
 
 <div class="video-grid">
-<div class="video-card">
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM"></iframe>
-</div>
+
+<div class="video-card" onclick="openVideo('Q9qAyt0G-jM')">
+<div class="video-thumb" style="background-image:url('https://img.youtube.com/vi/Q9qAyt0G-jM/0.jpg')"></div>
 <h4>SAY YES</h4>
 </div>
 
-<div class="video-card">
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/yfZIaTZJo0o"></iframe>
-</div>
+<div class="video-card" onclick="openVideo('yfZIaTZJo0o')">
+<div class="video-thumb" style="background-image:url('https://img.youtube.com/vi/yfZIaTZJo0o/0.jpg')"></div>
 <h4>YAH YAH YAH</h4>
 </div>
 
-<div class="video-card">
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/djfjKhzPzGU"></iframe>
-</div>
+<div class="video-card" onclick="openVideo('djfjKhzPzGU')">
+<div class="video-thumb" style="background-image:url('https://img.youtube.com/vi/djfjKhzPzGU/0.jpg')"></div>
 <h4>LOVE SONG</h4>
 </div>
+
 </div>
 
-<!-- ===== 自動生成ディスコグラフィ ===== -->
-<div class="history">
-<h3>DISCOGRAPHY DETAILS</h3>
-<div class="timeline" id="discography"></div>
-</div>
-
-<!-- ===== 既存HISTORYそのまま ===== -->
+<!-- HISTORY -->
 <div class="history">
 <h3>HISTORY</h3>
 
 <div class="timeline">
-<div class="timeline-item">
-<h4>1979年</h4>
-<p>ポプコンをきっかけにデビュー。「ひとり咲き」で注目。</p>
-</div>
 
 <div class="timeline-item">
-<h4>1980年代</h4>
-<p>「万里の河」などヒット。</p>
+<h4>1979年</h4>
+<p>
+デビュー。「ひとり咲き」で注目。  
+代表曲：<span class="song" onclick="openVideo('Q9qAyt0G-jM')">ひとり咲き</span>
+</p>
+<img src="image1.jpg">
 </div>
 
 <div class="timeline-item">
 <h4>1991年</h4>
-<p>「SAY YES」大ヒット。</p>
+<p>
+「<span class="song" onclick="openVideo('Q9qAyt0G-jM')">SAY YES</span>」が社会現象。
+</p>
+<img src="image2.jpg">
 </div>
 
 <div class="timeline-item">
 <h4>1993年</h4>
-<p>「YAH YAH YAH」ミリオン。</p>
-</div>
-
-<div class="timeline-item">
-<h4>2000年代</h4>
-<p>ソロと並行活動。</p>
+<p>
+「<span class="song" onclick="openVideo('yfZIaTZJo0o')">YAH YAH YAH</span>」ミリオン。
+</p>
+<img src="image3.jpg">
 </div>
 
 <div class="timeline-item">
 <h4>2007年</h4>
 <p>活動休止。</p>
+<img src="image4.jpg">
 </div>
+
 </div>
 </div>
 
 </section>
+
+<!-- モーダル -->
+<div class="modal" id="modal" onclick="closeVideo()">
+<iframe id="player" src="" allowfullscreen></iframe>
+</div>
 
 <footer>
 <p>© Tribute Site</p>
 </footer>
 
 <script>
-// ===== スライド =====
-const images=document.querySelectorAll(".hero img");
-let current=0;
+// スライド
+const imgs=document.querySelectorAll(".hero img");
+let c=0;
 setInterval(()=>{
-images[current].classList.remove("active");
-current=(current+1)%images.length;
-images[current].classList.add("active");
+imgs[c].classList.remove("active");
+c=(c+1)%imgs.length;
+imgs[c].classList.add("active");
 },3000);
 
-// ===== ディスコグラフィ（1979〜2007）=====
-const data = [
-{year:1979,s:"ひとり咲き",a:"風舞"},
-{year:1980,s:"万里の河",a:"熱風"},
-{year:1981,s:"男と女",a:"黄昏の騎士"},
-{year:1982,s:"北風物語",a:"TURNING POINT"},
-{year:1983,s:"MOON LIGHT BLUES",a:"INSIDE"},
-{year:1984,s:"標的",a:"RAINBOW"},
-{year:1985,s:"モーニングムーン",a:"Z=One"},
-{year:1986,s:"恋人はワイン色",a:"SUPER BEST"},
-{year:1987,s:"Trip",a:"Mr.ASIA"},
-{year:1988,s:"WALK",a:"RHAPSODY"},
-{year:1989,s:"DO YA DO",a:"PRIDE"},
-{year:1990,s:"太陽と埃の中で",a:"SEE YA"},
-{year:1991,s:"SAY YES",a:"TREE"},
-{year:1992,s:"if",a:"GUYS"},
-{year:1993,s:"YAH YAH YAH",a:"RED HILL"},
-{year:1994,s:"HEART",a:"Code Name.2"},
-{year:1995,s:"On Your Mark",a:"CODE NAME.1"},
-{year:1996,s:"river",a:"NO DOUBT"},
-{year:1997,s:"NとLの野球帽",a:"Best Selection"},
-{year:1998,s:"この愛のために",a:"MTV unplugged"},
-{year:1999,s:"群れ",a:"10 YEARS AFTER"},
-{year:2000,s:"C-46",a:"NOT AT ALL"},
-{year:2001,s:"36度線",a:"NOT AT ALL"},
-{year:2002,s:"Here & There",a:"THE STORY of BALLAD"},
-{year:2003,s:"Man and Woman",a:"DOUBLE"},
-{year:2004,s:"something there",a:"DOUBLE"},
-{year:2005,s:"熱い想い",a:"Single Collection"},
-{year:2006,s:"-",a:"-"},
-{year:2007,s:"活動休止",a:"-"}
-];
+// 動画モーダル
+function openVideo(id){
+document.getElementById("modal").style.display="flex";
+document.getElementById("player").src="https://www.youtube.com/embed/"+id+"?autoplay=1";
+}
 
-// ===== 描画 =====
-const container=document.getElementById("discography");
+function closeVideo(){
+document.getElementById("modal").style.display="none";
+document.getElementById("player").src="";
+}
 
-data.forEach(d=>{
-const div=document.createElement("div");
-div.className="timeline-item";
+// スクロールアニメーション
+const items=document.querySelectorAll(".timeline-item");
 
-div.innerHTML=`
-<h4>${d.year}年</h4>
-<p>シングル：${d.s}<br>アルバム：${d.a}</p>
-`;
-
-container.appendChild(div);
+window.addEventListener("scroll",()=>{
+items.forEach(item=>{
+const pos=item.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
+item.classList.add("show");
+}
+});
 });
 </script>
 
