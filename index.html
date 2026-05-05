@@ -39,7 +39,7 @@
       color: #fff;
     }
 
-    /* ヒーロー */
+    /* ===== ヒーロー ===== */
     .hero {
       height: 100vh;
       position: relative;
@@ -76,9 +76,10 @@
       text-align: center;
     }
 
+    /* ===== セクション ===== */
     section {
       padding: 100px 40px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
 
@@ -89,7 +90,7 @@
       padding-left: 15px;
     }
 
-    /* 動画 */
+    /* ===== 動画 ===== */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -100,16 +101,30 @@
       background: #111;
       padding: 15px;
       border: 1px solid #222;
+      transition: 0.3s;
     }
 
-    iframe {
+    .video-card:hover {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 */
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 200px;
+      height: 100%;
       border: none;
     }
 
     .video-card h4 {
-      margin: 10px 0 5px;
+      margin-top: 10px;
     }
 
     footer {
@@ -129,7 +144,7 @@
   </nav>
 </header>
 
-<!-- 画像スライド -->
+<!-- ===== 画像スライド ===== -->
 <section class="hero">
   <img src="image1.jpg" class="active">
   <img src="image2.jpg">
@@ -142,26 +157,35 @@
   </div>
 </section>
 
-<!-- 動画セクション -->
+<!-- ===== DISCOGRAPHY（動画） ===== -->
 <section id="music">
   <h3>DISCOGRAPHY</h3>
 
   <div class="video-grid">
 
+    <!-- SAY YES -->
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/5Vh9s4q1u8k" allowfullscreen></iframe>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM" allowfullscreen></iframe>
+      </div>
       <h4>SAY YES</h4>
       <p>代表曲のひとつ。</p>
     </div>
 
+    <!-- YAH YAH YAH -->
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/6bALJxjL8jw" allowfullscreen></iframe>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/yfZIaTZJo0o" allowfullscreen></iframe>
+      </div>
       <h4>YAH YAH YAH</h4>
       <p>エネルギッシュな名曲。</p>
     </div>
 
+    <!-- LOVE SONG -->
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/3w9zHn4vF7E" allowfullscreen></iframe>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/djfjKhzPzGU" allowfullscreen></iframe>
+      </div>
       <h4>LOVE SONG</h4>
       <p>心に響くバラード。</p>
     </div>
@@ -174,7 +198,7 @@
 </footer>
 
 <script>
-  // 画像スライド
+  // ===== 画像スライド =====
   const images = document.querySelectorAll(".hero img");
   let current = 0;
 
