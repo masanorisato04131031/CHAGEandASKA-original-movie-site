@@ -48,27 +48,44 @@
       color: #fff;
     }
 
+    /* ===== ヒーロー画像（スライド） ===== */
     .hero {
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=2070') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       position: relative;
+      overflow: hidden;
     }
 
+    .hero img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .hero img.active {
+      opacity: 1;
+    }
+
+    /* 画像の上に黒いフィルター */
     .hero::after {
       content: "";
       position: absolute;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.5);
+      top: 0;
+      left: 0;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
     }
 
     .hero h2 {
@@ -77,6 +94,7 @@
       margin-bottom: 20px;
       opacity: 0;
       transform: translateY(20px);
+      transition: 1s;
     }
 
     .hero p {
@@ -84,6 +102,7 @@
       font-size: 16px;
       opacity: 0;
       transform: translateY(20px);
+      transition: 1s;
     }
 
     section {
@@ -122,10 +141,6 @@
       border-color: #555;
     }
 
-    .card h4 {
-      margin-bottom: 10px;
-    }
-
     footer {
       text-align: center;
       padding: 40px;
@@ -133,7 +148,7 @@
       border-top: 1px solid #222;
     }
 
-    /* フェードイン */
+    /* スクロールフェード */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -157,7 +172,13 @@
   </nav>
 </header>
 
+<!-- ===== 画像スライド部分 ===== -->
 <section class="hero">
+  <img src="image1.jpg" class="active">
+  <img src="image2.jpg">
+  <img src="image3.jpg">
+  <img src="image4.jpg">
+
   <div class="hero-content">
     <h2 id="main-title">CHAGE & ASKA</h2>
     <p id="sub-title">Timeless Voices, Eternal Melodies</p>
@@ -178,15 +199,15 @@
   <div class="discography">
     <div class="card">
       <h4>SAY YES</h4>
-      <p>代表曲のひとつ。圧倒的な支持を得た名曲。</p>
+      <p>代表曲のひとつ。</p>
     </div>
     <div class="card">
       <h4>YAH YAH YAH</h4>
-      <p>エネルギッシュな楽曲で幅広い世代に人気。</p>
+      <p>エネルギッシュな楽曲。</p>
     </div>
     <div class="card">
       <h4>LOVE SONG</h4>
-      <p>繊細で深い感情を描いた名バラード。</p>
+      <p>名バラード。</p>
     </div>
   </div>
 </section>
@@ -196,18 +217,31 @@
 </footer>
 
 <script>
-  // ヒーローテキスト アニメーション
+  // ===== 画像スライド =====
+  const images = document.querySelectorAll(".hero img");
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove("active");
+    current = (current + 1) % images.length;
+    images[current].classList.add("active");
+  }, 3000);
+
+  // ===== タイトルフェード =====
   window.addEventListener("load", () => {
-    document.getElementById("main-title").style.opacity = "1";
-    document.getElementById("main-title").style.transform = "translateY(0)";
+    const title = document.getElementById("main-title");
+    const sub = document.getElementById("sub-title");
+
+    title.style.opacity = "1";
+    title.style.transform = "translateY(0)";
 
     setTimeout(() => {
-      document.getElementById("sub-title").style.opacity = "1";
-      document.getElementById("sub-title").style.transform = "translateY(0)";
+      sub.style.opacity = "1";
+      sub.style.transform = "translateY(0)";
     }, 500);
   });
 
-  // スクロールフェードイン
+  // ===== スクロールフェード =====
   const elements = document.querySelectorAll('.fade-in');
 
   const observer = new IntersectionObserver((entries) => {
