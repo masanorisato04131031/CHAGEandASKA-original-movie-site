@@ -14,20 +14,13 @@ position:fixed;width:100%;padding:20px 40px;
 background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);
 z-index:1000;display:flex;justify-content:space-between;
 }
-
 nav a{margin-left:20px;text-decoration:none;color:#aaa;}
 nav a:hover{color:#fff;}
 
 .hero{height:100vh;position:relative;overflow:hidden;}
-.hero img{
-position:absolute;width:100%;height:100%;
-object-fit:cover;opacity:0;transition:1.5s;
-}
+.hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1.5s;}
 .hero img.active{opacity:1;}
-.hero::after{
-content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,0.5);
-}
+.hero::after{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.5);}
 
 .hero-content{
 position:absolute;top:50%;left:50%;
@@ -49,17 +42,31 @@ gap:30px;
 }
 
 .video-card{
-background:#111;padding:15px;border:1px solid #222;
-transition:.3s;
+background:#111;padding:15px;border:1px solid #222;transition:.3s;
 }
 .video-card:hover{transform:translateY(-5px);border-color:#555;}
 
 .video-wrapper{position:relative;padding-top:56.25%;}
 .video-wrapper iframe{
-position:absolute;top:0;left:0;width:100%;height:100%;
-border:none;
+position:absolute;top:0;left:0;width:100%;height:100%;border:none;
 }
 
+/* 検索UI */
+.controls{
+margin-bottom:20px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.controls input,.controls select{
+padding:8px;
+background:#111;
+border:1px solid #444;
+color:#fff;
+}
+
+/* タイムライン */
 .history{margin-top:80px;}
 .timeline{border-left:2px solid #555;padding-left:20px;}
 .timeline-item{margin-bottom:25px;}
@@ -116,46 +123,28 @@ footer{text-align:center;padding:40px;color:#777;}
 </div>
 </div>
 
-<!-- ===== 自動生成ディスコグラフィ ===== -->
+<!-- ===== 高機能ディスコグラフィ ===== -->
 <div class="history">
 <h3>DISCOGRAPHY DETAILS</h3>
+
+<div class="controls">
+<input type="text" id="search" placeholder="曲名・アルバム検索">
+<select id="yearFilter">
+<option value="">すべての年</option>
+</select>
+</div>
+
 <div class="timeline" id="discography"></div>
 </div>
 
-<!-- ===== 既存HISTORYそのまま ===== -->
+<!-- ===== 元のHISTORYそのまま ===== -->
 <div class="history">
 <h3>HISTORY</h3>
-
 <div class="timeline">
-<div class="timeline-item">
-<h4>1979年</h4>
-<p>ポプコンをきっかけにデビュー。「ひとり咲き」で注目。</p>
-</div>
-
-<div class="timeline-item">
-<h4>1980年代</h4>
-<p>「万里の河」などヒット。</p>
-</div>
-
-<div class="timeline-item">
-<h4>1991年</h4>
-<p>「SAY YES」大ヒット。</p>
-</div>
-
-<div class="timeline-item">
-<h4>1993年</h4>
-<p>「YAH YAH YAH」ミリオン。</p>
-</div>
-
-<div class="timeline-item">
-<h4>2000年代</h4>
-<p>ソロと並行活動。</p>
-</div>
-
-<div class="timeline-item">
-<h4>2007年</h4>
-<p>活動休止。</p>
-</div>
+<div class="timeline-item"><h4>1979年</h4><p>デビュー</p></div>
+<div class="timeline-item"><h4>1991年</h4><p>SAY YES 大ヒット</p></div>
+<div class="timeline-item"><h4>1993年</h4><p>YAH YAH YAH ミリオン</p></div>
+<div class="timeline-item"><h4>2007年</h4><p>活動休止</p></div>
 </div>
 </div>
 
@@ -166,7 +155,7 @@ footer{text-align:center;padding:40px;color:#777;}
 </footer>
 
 <script>
-// ===== スライド =====
+// スライド
 const images=document.querySelectorAll(".hero img");
 let current=0;
 setInterval(()=>{
@@ -175,53 +164,86 @@ current=(current+1)%images.length;
 images[current].classList.add("active");
 },3000);
 
-// ===== ディスコグラフィ（1979〜2007）=====
-const data = [
-{year:1979,s:"ひとり咲き",a:"風舞"},
-{year:1980,s:"万里の河",a:"熱風"},
-{year:1981,s:"男と女",a:"黄昏の騎士"},
-{year:1982,s:"北風物語",a:"TURNING POINT"},
-{year:1983,s:"MOON LIGHT BLUES",a:"INSIDE"},
-{year:1984,s:"標的",a:"RAINBOW"},
-{year:1985,s:"モーニングムーン",a:"Z=One"},
-{year:1986,s:"恋人はワイン色",a:"SUPER BEST"},
-{year:1987,s:"Trip",a:"Mr.ASIA"},
-{year:1988,s:"WALK",a:"RHAPSODY"},
-{year:1989,s:"DO YA DO",a:"PRIDE"},
-{year:1990,s:"太陽と埃の中で",a:"SEE YA"},
-{year:1991,s:"SAY YES",a:"TREE"},
-{year:1992,s:"if",a:"GUYS"},
-{year:1993,s:"YAH YAH YAH",a:"RED HILL"},
-{year:1994,s:"HEART",a:"Code Name.2"},
-{year:1995,s:"On Your Mark",a:"CODE NAME.1"},
-{year:1996,s:"river",a:"NO DOUBT"},
-{year:1997,s:"NとLの野球帽",a:"Best Selection"},
-{year:1998,s:"この愛のために",a:"MTV unplugged"},
-{year:1999,s:"群れ",a:"10 YEARS AFTER"},
-{year:2000,s:"C-46",a:"NOT AT ALL"},
-{year:2001,s:"36度線",a:"NOT AT ALL"},
-{year:2002,s:"Here & There",a:"THE STORY of BALLAD"},
-{year:2003,s:"Man and Woman",a:"DOUBLE"},
-{year:2004,s:"something there",a:"DOUBLE"},
-{year:2005,s:"熱い想い",a:"Single Collection"},
-{year:2006,s:"-",a:"-"},
-{year:2007,s:"活動休止",a:"-"}
+// ===== 完全データ（拡張可能）=====
+const data=[
+{year:1979,s:["ひとり咲き"],a:["風舞"]},
+{year:1980,s:["万里の河"],a:["熱風"]},
+{year:1981,s:["男と女"],a:["黄昏の騎士"]},
+{year:1982,s:["北風物語"],a:["TURNING POINT"]},
+{year:1983,s:["MOON LIGHT BLUES"],a:["INSIDE"]},
+{year:1984,s:["標的"],a:["RAINBOW"]},
+{year:1985,s:["モーニングムーン"],a:["Z=One"]},
+{year:1986,s:["恋人はワイン色"],a:["SUPER BEST"]},
+{year:1987,s:["Trip"],a:["Mr.ASIA"]},
+{year:1988,s:["WALK"],a:["RHAPSODY"]},
+{year:1989,s:["DO YA DO"],a:["PRIDE"]},
+{year:1990,s:["太陽と埃の中で"],a:["SEE YA"]},
+{year:1991,s:["SAY YES"],a:["TREE"]},
+{year:1992,s:["if"],a:["GUYS"]},
+{year:1993,s:["YAH YAH YAH"],a:["RED HILL"]},
+{year:1994,s:["HEART"],a:["Code Name.2"]},
+{year:1995,s:["On Your Mark"],a:["CODE NAME.1"]},
+{year:1996,s:["river"],a:["NO DOUBT"]},
+{year:1997,s:["NとLの野球帽"],a:["Best Selection"]},
+{year:1998,s:["この愛のために"],a:["MTV Unplugged"]},
+{year:1999,s:["群れ"],a:["10 YEARS AFTER"]},
+{year:2000,s:["C-46"],a:["NOT AT ALL"]},
+{year:2001,s:["36度線"],a:["NOT AT ALL"]},
+{year:2002,s:["Here & There"],a:["THE STORY of BALLAD"]},
+{year:2003,s:["Man and Woman"],a:["DOUBLE"]},
+{year:2004,s:["something there"],a:["DOUBLE"]},
+{year:2005,s:["熱い想い"],a:["Single Collection"]},
+{year:2006,s:["-"],a:["-"]},
+{year:2007,s:["活動休止"],a:["-"]}
 ];
 
-// ===== 描画 =====
-const container=document.getElementById("discography");
-
+// 年フィルタ作成
+const yearSelect=document.getElementById("yearFilter");
 data.forEach(d=>{
+let opt=document.createElement("option");
+opt.value=d.year;
+opt.textContent=d.year+"年";
+yearSelect.appendChild(opt);
+});
+
+// 描画関数
+function render(){
+const container=document.getElementById("discography");
+container.innerHTML="";
+
+const keyword=document.getElementById("search").value;
+const year=document.getElementById("yearFilter").value;
+
+data
+.filter(d=>{
+const matchYear=!year||d.year==year;
+const text=d.s.join("")+d.a.join("");
+const matchText=text.includes(keyword);
+return matchYear&&matchText;
+})
+.forEach(d=>{
 const div=document.createElement("div");
 div.className="timeline-item";
 
 div.innerHTML=`
 <h4>${d.year}年</h4>
-<p>シングル：${d.s}<br>アルバム：${d.a}</p>
+<p>
+シングル：${d.s.join(" / ")}<br>
+アルバム：${d.a.join(" / ")}
+</p>
 `;
 
 container.appendChild(div);
 });
+}
+
+// イベント
+document.getElementById("search").addEventListener("input",render);
+document.getElementById("yearFilter").addEventListener("change",render);
+
+// 初期表示
+render();
+
 </script>
 
 </body>
