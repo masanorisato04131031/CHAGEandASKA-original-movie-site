@@ -1,9 +1,17 @@
 // js/main.js
 
+// setlists存在チェック（超重要）
+if (typeof setlists === "undefined") {
+  console.error("❌ setlistsが読み込まれていません（setlists.jsの読み込み順を確認）");
+}
+
+// 年ボタン生成
 const yearButtons = document.getElementById("yearButtons");
 
-// ボタン生成
-Object.keys(setlists).forEach((year, index) => {
+// 年キー取得（安全化）
+const years = Object.keys(setlists || {}).sort();
+
+years.forEach((year, index) => {
   const btn = document.createElement("div");
   btn.className = "year-btn";
   btn.innerText = year;
@@ -16,20 +24,26 @@ Object.keys(setlists).forEach((year, index) => {
 
   yearButtons.appendChild(btn);
 
-  // 最初の年をアクティブに
   if (index === 0) {
     btn.classList.add("active");
   }
 });
 
-// 描画
+// 描画処理（安全化）
 function render(year) {
   const container = document.getElementById("setlistContainer");
+
+  if (!setlists[year]) {
+    container.innerHTML = `<p>データがありません（${year}）</p>`;
+    return;
+  }
+
   let html = "";
 
   setlists[year].forEach(live => {
     let songs = "";
-    live.songs.forEach((s, i) => {
+
+    (live.songs || []).forEach((s, i) => {
       songs += `<div class="song"><span>${i + 1}</span>${s}</div>`;
     });
 
@@ -45,17 +59,18 @@ function render(year) {
 }
 
 // 初期表示
-const firstYear = Object.keys(setlists)[0];
-if (firstYear) {
-  render(firstYear);
+if (years.length > 0) {
+  render(years[0]);
 }
 
-// スライド
+// スライド（安全化）
 const images = document.querySelectorAll(".hero img");
 let current = 0;
 
-setInterval(() => {
-  images[current].classList.remove("active");
-  current = (current + 1) % images.length;
-  images[current].classList.add("active");
-}, 3000);
+if (images.length > 0) {
+  setInterval(() => {
+    images[current].classList.remove("active");
+    current = (current + 1) % images.length;
+    images[current].classList.add("active");
+  }, 3000);
+}
