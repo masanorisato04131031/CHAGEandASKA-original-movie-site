@@ -38,11 +38,11 @@ function render(year) {
 }
 
 // 初期表示
-const first = Object.keys(setlists)[0];
-document.querySelectorAll(".year-btn")[0]?.classList.add("active");
-render(first);
+const firstYear = Object.keys(setlists)[0];
+render(firstYear);
+document.querySelector(".year-btn").classList.add("active");
 
-// ヒーロー画像スライド
+// スライド
 const images = document.querySelectorAll(".hero img");
 let current = 0;
 
