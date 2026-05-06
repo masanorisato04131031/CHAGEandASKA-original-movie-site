@@ -2,7 +2,7 @@
 
 const setlists = {
 
-  /* "1980":[{title:"旅立ちコンサート",songs:[
+"1980":[{title:"旅立ちコンサート",songs:[
 "追想","私の愛した人","翼","あとまわし","この恋おいらのからまわり","冬に置きざり","夢から夢へ","冬の恋","風舞","ひとり咲き","御意見無用","あばんぎゃるど","夏は過ぎて","流恋情歌","終章(エピローグ)～追想の主題"
 ]}],
 
@@ -65,8 +65,6 @@ const setlists = {
 ]}
 ],
 
-/* ===== 1993 追加 ===== */
-
 "1993":[
 {title:"SPECIAL EVENT 1993 GUYS ～夢の番人～",songs:[
 "GUYS","夢の番人","CRIMSON","恋人はワイン色","ゼロの向こうのGOOD LUCK","夢","LOVE SONG","SAY YES","WALK","野いちごがゆれるように","光と影","MOON LIGHT BLUES","HANG UP THE PHONE","嘘","太陽と埃の中で","LONDON POWER TOWN","モナリザの背中よりも","僕はこの瞳で嘘をつく","PRIDE","YAH YAH YAH","ロマンシングヤード","no no darlin'"
@@ -75,8 +73,5 @@ const setlists = {
 "夜明けは沈黙の中へ","なぜに君は帰らない","GUYS","SAY YES","CATCH & RELEASE","HANG UP THE PHONE","LOVE SONG","no no darlin'","TAO","You are free","蛍","今夜ちょっとさ","Son and Daughter～それより僕が伝えたいのは","RED HILL","THE TIME","Mr.Jの悲劇は岩より重い","僕はこの瞳で嘘をつく","YAH YAH YAH","ロマンシングヤード","PRIDE","野いちごがゆれるように"
 ]}
 ]
-
-};
- */
 
 };
