@@ -23,15 +23,12 @@ h3{font-size:28px;margin-bottom:30px;border-left:3px solid #fff;padding-left:15p
 .video-card:hover{transform:translateY(-8px);border-color:#777;box-shadow:0 10px 30px rgba(255,255,255,0.1);}
 .video-wrapper{position:relative;padding-top:56.25%;}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-
 .year-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
 .year-btn{padding:10px 16px;border:1px solid #333;background:#111;cursor:pointer;border-radius:20px;}
 .year-btn.active{background:#fff;color:#000;box-shadow:0 0 10px rgba(255,255,255,0.8);}
-
 .live-card{background:#111;border:1px solid #222;padding:20px;margin-bottom:20px;border-radius:10px;}
 .song{display:flex;margin-bottom:5px;color:#bbb;}
 .song span{width:30px;color:#fff;font-weight:bold;}
-
 footer{text-align:center;padding:40px;color:#777;}
 </style>
 </head>
@@ -106,11 +103,21 @@ const setlists={
 {title:"ONE NIGHT MAGIC",songs:["ひとり咲き","万里の河","男と女","マリオネット","流恋情歌","熱風","終章(エピローグ)","MIDNIGHT 2 CALL","オンリー・ロンリー","MOON LIGHT BLUES","東京CARRY ON","誘惑のベルが鳴る","夢じかけロマンス","唇","SHAKIN' NIGHT","アルマジロ・ヴギ","ボヘミアン","マリア(Back To The City)","黄昏を待たずに","棘","TWILIGHT ZONE","熱い想い","夢から夢へ","モーニングムーン","Darlin'","SHAKIN' NIGHT"]},
 {title:"Big Explosion Series",songs:["EXPLOSION","マリア","ボヘミアン","砂漠のイリュージョン","HIDARIMEが感じてる","Sensation","MOON LIGHT BLUES","キャンディー・ラブになりすぎて","Key Word","終章","SHAKIN' NIGHT","Fifty-Fifty","魅惑","誘惑のベルが鳴る","棘","モーニングムーン","安息の日々","TURNING POINT","夢のかなた","東京CARRY ON","黄昏を待たずに"]},
 {title:"Summer Explosion Series",songs:["EXPLOSION","ボヘミアン","夢のかなた","黄昏を待たずに","Newsにならない恋","誘惑のベルが鳴る","砂漠のイリュージョン","HIDARIMEが感じてる","水のナイフ","ショート・ショート","MOON LIGHT BLUES","TEKU・TEKU","メドレー～ひとり咲き","SHAKIN' NIGHT","Fifty-Fifty","Count Down","棘","モーニングムーン","TWILIGHT ZONE","魅惑","TURNING POINT","熱い想い","Count Down","東京CARRY ON","声を聞かせて"]}
+],
+
+"1987":[
+{title:"We Shall Return",songs:["Mr.ASIA","指環が泣いた","黄昏を待たずに","HIDARIMEが感じてる","MEBIUS","MIX BLOOD","MOON LIGHT BLUES","MIDNIGHT 2 CALL","夏のおわり","SAILOR MAN","LONDON POWER TOWN","EXPLOSION","スローダウン","Count Down","TURNING POINT","ひとり咲き","終章(エピローグ)"]},
+{title:"X'mas Special'87",songs:["シルバーパラダイス","LONDON POWER TOWN","黄昏を待たずに","ラプソディ","ボヘミアン","恋人はワイン色","噂のトラブルメーカー","MY Mr.LONELY HEART","ショート・ショート","MOON LIGHT BLUES","WHITE-NIGHT WHITE-MOON","今宵二人でX'mas","棘","Mr.ASIA","Count Down","モーニングムーン","SAILOR MAN","ミステリー","きよしこの夜","ロマンシングヤード"]}
+],
+
+"1988":[
+{title:"コンサートツアー'88",songs:["LONDON POWER TOWN","ラプソディ","恋人はワイン色","ripple ring","風のライオン","Trip","レノンのミスキャスト","MIDNIGHT 2 CALL","ミステリー","失恋男のモンタージユ","あきらめのBlue Day","BELIEVE IT?","SAILOR MAN","Mr.ASIA","モーニングムーン","TURNING POINT","熱い想い","MOON LIGHT BLUES","幻夜","黄昏を待たずに","ロマンシングヤード"]},
+{title:"コンサートツアー1988 X'mas Special",songs:["Love Affair","LONDON POWER TOWN","ラプソデイ","恋人はワイン色","Trip","赤いベッド","レノンのミスキャスト","SCENE","伝わりますか","Far Away","憧れ","シルバーパラダイス","黄昏を待たずに","モーニングムーン","スローダウン","Energy","BELIEVE IT?","TURNING POINT","ripple ring","憧れ"]}
 ]
 
 };
 
-/* ボタン生成 */
+/* JSは変更なし */
 const yearButtons=document.getElementById("yearButtons");
 Object.keys(setlists).forEach(year=>{
 const btn=document.createElement("div");
