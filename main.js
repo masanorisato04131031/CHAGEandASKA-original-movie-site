@@ -2,7 +2,8 @@
 
 const yearButtons = document.getElementById("yearButtons");
 
-Object.keys(setlists).forEach(year => {
+// ボタン生成
+Object.keys(setlists).forEach((year, index) => {
   const btn = document.createElement("div");
   btn.className = "year-btn";
   btn.innerText = year;
@@ -14,8 +15,14 @@ Object.keys(setlists).forEach(year => {
   };
 
   yearButtons.appendChild(btn);
+
+  // 最初の年をアクティブに
+  if (index === 0) {
+    btn.classList.add("active");
+  }
 });
 
+// 描画
 function render(year) {
   const container = document.getElementById("setlistContainer");
   let html = "";
@@ -39,8 +46,9 @@ function render(year) {
 
 // 初期表示
 const firstYear = Object.keys(setlists)[0];
-render(firstYear);
-document.querySelector(".year-btn").classList.add("active");
+if (firstYear) {
+  render(firstYear);
+}
 
 // スライド
 const images = document.querySelectorAll(".hero img");
