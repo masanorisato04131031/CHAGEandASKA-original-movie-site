@@ -68,8 +68,16 @@ padding:8px;background:#111;border:1px solid #444;color:#fff;
 .history{margin-top:80px;}
 .timeline{border-left:2px solid #555;padding-left:20px;}
 .timeline-item{margin-bottom:25px;}
-.timeline-item h4{font-size:18px;margin-bottom:5px;}
+.timeline-item h4{font-size:18px;margin-bottom:5px;cursor:pointer;}
 .timeline-item p{color:#bbb;line-height:1.6;}
+
+.setlist{
+margin-top:10px;
+display:none;
+background:#111;
+padding:10px;
+border:1px solid #333;
+}
 
 footer{text-align:center;padding:40px;color:#777;}
 </style>
@@ -121,60 +129,64 @@ footer{text-align:center;padding:40px;color:#777;}
 </div>
 </div>
 
-<!-- ===== ディスコグラフィ ===== -->
+<!-- ディスコグラフィ -->
 <div class="history">
-<h3>FULL DISCOGRAPHY (Wikipedia Structure)</h3>
-
-<div class="controls">
-<input type="text" id="search" placeholder="検索（曲・アルバム）">
-<select id="yearFilter">
-<option value="">すべての年</option>
-</select>
-</div>
-
+<h3>FULL DISCOGRAPHY</h3>
 <div class="timeline" id="discography"></div>
 </div>
 
-<!-- ===== 強化済HISTORY（ここが統合ポイント）===== -->
+<!-- HISTORY + セットリスト -->
 <div class="history">
-<h3>HISTORY</h3>
+<h3>HISTORY & LIVE SETLIST</h3>
 <div class="timeline">
 
-<div class="timeline-item"><h4>1979年</h4><p>デビューシングル「ひとり咲き」でメジャーデビュー。フォーク色の強いスタイルで活動開始。</p></div>
-<div class="timeline-item"><h4>1980年</h4><p>「万里の河」がヒットし知名度上昇。</p></div>
-<div class="timeline-item"><h4>1981年</h4><p>「男と女」で世界観を確立。</p></div>
-<div class="timeline-item"><h4>1982年</h4><p>「TURNING POINT」で音楽性が進化。</p></div>
-<div class="timeline-item"><h4>1983年</h4><p>都会的サウンドへ移行。</p></div>
-<div class="timeline-item"><h4>1984年</h4><p>ロックとポップの融合。</p></div>
-<div class="timeline-item"><h4>1985年</h4><p>「モーニングムーン」で人気拡大。</p></div>
-<div class="timeline-item"><h4>1986年</h4><p>ベスト盤で地位確立。</p></div>
-<div class="timeline-item"><h4>1987年</h4><p>「Mr.ASIA」で新境地。</p></div>
-<div class="timeline-item"><h4>1988年</h4><p>社会的メッセージ性強化。</p></div>
-<div class="timeline-item"><h4>1989年</h4><p>トップアーティストへ。</p></div>
-<div class="timeline-item"><h4>1990年</h4><p>ロック色強化。</p></div>
+<div class="timeline-item">
+<h4 onclick="toggle(this)">1980年</h4>
+<p>万里の河ヒット</p>
+<div class="setlist">
+万里の河 / ひとり咲き / 男と女 / 終章 / 流恋情歌
+</div>
+</div>
 
-<div class="timeline-item"><h4>1991年</h4><p>SAY YES 大ヒット（ダブルミリオン）。</p></div>
-<div class="timeline-item"><h4>1992年</h4><p>アルバム「GUYS」成功。</p></div>
-<div class="timeline-item"><h4>1993年</h4><p>YAH YAH YAH ミリオン。</p></div>
-<div class="timeline-item"><h4>1994年</h4><p>表現力の幅拡大。</p></div>
-<div class="timeline-item"><h4>1995年</h4><p>On Your Markで芸術性評価。</p></div>
-<div class="timeline-item"><h4>1996年</h4><p>安定期。</p></div>
-<div class="timeline-item"><h4>1997年</h4><p>ベスト盤で総括。</p></div>
-<div class="timeline-item"><h4>1998年</h4><p>MTV Unplugged出演。</p></div>
-<div class="timeline-item"><h4>1999年</h4><p>20周年。</p></div>
+<div class="timeline-item">
+<h4 onclick="toggle(this)">1985年</h4>
+<p>モーニングムーンでブレイク</p>
+<div class="setlist">
+モーニングムーン / 万里の河 / 男と女 / TURNING POINT / Z=One
+</div>
+</div>
 
-<div class="timeline-item"><h4>2000年</h4><p>新世紀サウンドへ。</p></div>
-<div class="timeline-item"><h4>2001年</h4><p>個人活動活発化。</p></div>
-<div class="timeline-item"><h4>2002年</h4><p>バラード再評価。</p></div>
-<div class="timeline-item"><h4>2003年</h4><p>新たな挑戦。</p></div>
-<div class="timeline-item"><h4>2004年</h4><p>安定した活動。</p></div>
-<div class="timeline-item"><h4>2005年</h4><p>過去作品再評価。</p></div>
-<div class="timeline-item"><h4>2006年</h4><p>活動減少。</p></div>
+<div class="timeline-item">
+<h4 onclick="toggle(this)">1991年</h4>
+<p>SAY YES 社会現象</p>
+<div class="setlist">
+SAY YES / 太陽と埃の中で / WALK / PRIDE / LOVE SONG
+</div>
+</div>
 
-<div class="timeline-item"><h4>2007年</h4><p>活動休止。</p></div>
+<div class="timeline-item">
+<h4 onclick="toggle(this)">1993年</h4>
+<p>YAH YAH YAH ミリオン</p>
+<div class="setlist">
+YAH YAH YAH / SAY YES / WALK / 太陽と埃の中で / if
+</div>
+</div>
 
-<div class="timeline-item"><h4>2010年代</h4><p>再評価・配信拡大。</p></div>
-<div class="timeline-item"><h4>2020年代</h4><p>サブスクで再注目。</p></div>
+<div class="timeline-item">
+<h4 onclick="toggle(this)">2000年</h4>
+<p>新世紀ツアー</p>
+<div class="setlist">
+C-46 / On Your Mark / LOVE SONG / river / SAY YES
+</div>
+</div>
+
+<div class="timeline-item">
+<h4 onclick="toggle(this)">2007年</h4>
+<p>活動休止前ラスト期</p>
+<div class="setlist">
+SAY YES / YAH YAH YAH / On Your Mark / LOVE SONG / 太陽と埃の中で
+</div>
+</div>
 
 </div>
 </div>
@@ -186,6 +198,7 @@ footer{text-align:center;padding:40px;color:#777;}
 </footer>
 
 <script>
+// スライド
 const images=document.querySelectorAll(".hero img");
 let current=0;
 setInterval(()=>{
@@ -194,74 +207,26 @@ current=(current+1)%images.length;
 images[current].classList.add("active");
 },3000);
 
-// データそのまま
-const discography = [
-{year:1979,singles:["ひとり咲き"],albums:["風舞"]},
-{year:1980,singles:["万里の河"],albums:["熱風"]},
-{year:1981,singles:["男と女"],albums:["黄昏の騎士"]},
-{year:1982,singles:["北風物語"],albums:["TURNING POINT"]},
-{year:1983,singles:["MOON LIGHT BLUES","マリア（Back To The City）"],albums:["INSIDE"]},
-{year:1984,singles:["標的（ターゲット）"],albums:["RAINBOW"]},
-{year:1985,singles:["モーニングムーン","万里の河（再録）"],albums:["Z=One"]},
-{year:1986,singles:["恋人はワイン色"],albums:["SUPER BEST"]},
-{year:1987,singles:["Trip"],albums:["Mr.ASIA"]},
-{year:1988,singles:["WALK"],albums:["RHAPSODY"]},
-{year:1989,singles:["DO YA DO"],albums:["PRIDE"]},
-{year:1990,singles:["太陽と埃の中で"],albums:["SEE YA"]},
-{year:1991,singles:["SAY YES"],albums:["TREE"]},
-{year:1992,singles:["if"],albums:["GUYS"]},
-{year:1993,singles:["YAH YAH YAH"],albums:["RED HILL"]},
-{year:1994,singles:["HEART"],albums:["Code Name.2"]},
-{year:1995,singles:["On Your Mark"],albums:["CODE NAME.1"]},
-{year:1996,singles:["river"],albums:["NO DOUBT"]},
-{year:1997,singles:["NとLの野球帽"],albums:["BEST"]},
-{year:1998,singles:["この愛のために"],albums:["MTV Unplugged"]},
-{year:1999,singles:["群れ"],albums:["10 YEARS AFTER"]},
-{year:2000,singles:["C-46"],albums:["NOT AT ALL"]},
-{year:2001,singles:["36度線"],albums:["NOT AT ALL"]},
-{year:2002,singles:["Here & There"],albums:["THE STORY of BALLAD"]},
-{year:2003,singles:["Man and Woman"],albums:["DOUBLE"]},
-{year:2004,singles:["something there"],albums:["DOUBLE"]},
-{year:2005,singles:["熱い想い"],albums:["Single Collection"]},
-{year:2006,singles:[],albums:[]},
-{year:2007,singles:["活動休止"],albums:[]}
-];
-
-const yearSelect=document.getElementById("yearFilter");
-discography.forEach(d=>{
-let opt=document.createElement("option");
-opt.value=d.year;
-opt.textContent=d.year+"年";
-yearSelect.appendChild(opt);
-});
-
-function render(){
-const container=document.getElementById("discography");
-container.innerHTML="";
-const keyword=document.getElementById("search").value;
-const year=document.getElementById("yearFilter").value;
-
-discography.filter(d=>{
-const matchYear=!year||d.year==year;
-const text=(d.singles.join("")+d.albums.join(""));
-return matchYear&&text.includes(keyword);
-}).forEach(d=>{
-const div=document.createElement("div");
-div.className="timeline-item";
-div.innerHTML=`
-<h4>${d.year}年</h4>
-<p>
-シングル：${d.singles.join(" / ")||"なし"}<br>
-アルバム：${d.albums.join(" / ")||"なし"}
-</p>`;
-container.appendChild(div);
-});
+// セットリスト開閉
+function toggle(el){
+const setlist=el.nextElementSibling.nextElementSibling;
+setlist.style.display = setlist.style.display==="block" ? "none":"block";
 }
 
-document.getElementById("search").addEventListener("input",render);
-document.getElementById("yearFilter").addEventListener("change",render);
+// ディスコグラフィ簡略表示
+const discography = [
+{year:1991,singles:["SAY YES"],albums:["TREE"]},
+{year:1993,singles:["YAH YAH YAH"],albums:["RED HILL"]},
+{year:2000,singles:["C-46"],albums:["NOT AT ALL"]}
+];
 
-render();
+const container=document.getElementById("discography");
+discography.forEach(d=>{
+const div=document.createElement("div");
+div.className="timeline-item";
+div.innerHTML=`<h4>${d.year}</h4><p>${d.singles.join()}</p>`;
+container.appendChild(div);
+});
 </script>
 
 </body>
