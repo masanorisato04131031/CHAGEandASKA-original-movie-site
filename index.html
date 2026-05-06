@@ -1,227 +1,322 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>CHAGE and ASKA Tribute</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>CHAGE and ASKA Tribute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Helvetica Neue",Arial;}
-body{background:#0a0a0a;color:#fff;}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
 
-header{
-position:fixed;width:100%;padding:20px 40px;
-background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);
-z-index:1000;display:flex;justify-content:space-between;
-}
+    body {
+      background: #0a0a0a;
+      color: #fff;
+    }
 
-nav a{margin-left:20px;text-decoration:none;color:#aaa;}
-nav a:hover{color:#fff;}
+    header {
+      position: fixed;
+      width: 100%;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+    }
 
-.hero{height:100vh;position:relative;overflow:hidden;}
-.hero img{
-position:absolute;width:100%;height:100%;
-object-fit:cover;opacity:0;transition:1.5s;
-}
-.hero img.active{opacity:1;}
-.hero::after{
-content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,0.5);
-}
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #aaa;
+    }
 
-.hero-content{
-position:absolute;top:50%;left:50%;
-transform:translate(-50%,-50%);
-z-index:2;text-align:center;
-}
+    nav a:hover {
+      color: #fff;
+    }
 
-section{padding:100px 40px;max-width:1100px;margin:auto;}
+    .hero {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
 
-h3{
-font-size:28px;margin-bottom:30px;
-border-left:3px solid #fff;padding-left:15px;
-}
+    .hero img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s;
+    }
 
-.video-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
+    .hero img.active {
+      opacity: 1;
+    }
 
-.video-card{
-background:#111;padding:15px;border:1px solid #222;
-transition:.3s;
-}
-.video-card:hover{transform:translateY(-5px);border-color:#555;}
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
 
-.video-wrapper{position:relative;padding-top:56.25%;}
-.video-wrapper iframe{
-position:absolute;top:0;left:0;width:100%;height:100%;
-border:none;
-}
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+    }
 
-.history{margin-top:80px;}
-.timeline{border-left:2px solid #555;padding-left:20px;}
-.timeline-item{margin-bottom:25px;}
+    section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.timeline-item h4{font-size:18px;margin-bottom:5px;}
-.timeline-item p{color:#bbb;line-height:1.6;}
+    h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      border-left: 3px solid #fff;
+      padding-left: 15px;
+    }
 
-footer{text-align:center;padding:40px;color:#777;}
-</style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .video-card {
+      background: #111;
+      padding: 15px;
+      border: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .history {
+      margin-top: 80px;
+    }
+
+    .timeline {
+      border-left: 2px solid #555;
+      padding-left: 20px;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+    }
+
+    .timeline-item h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .timeline-item p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #777;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>CHAGE & ASKA</h1>
-<nav><a href="#music">MUSIC</a></nav>
+  <h1>CHAGE & ASKA</h1>
+  <nav>
+    <a href="#music">MUSIC</a>
+  </nav>
 </header>
 
 <section class="hero">
-<img src="image1.jpg" class="active">
-<img src="image2.jpg">
-<img src="image3.jpg">
-<img src="image4.jpg">
+  <img src="image1.jpg" class="active">
+  <img src="image2.jpg">
+  <img src="image3.jpg">
+  <img src="image4.jpg">
 
-<div class="hero-content">
-<h2>CHAGE & ASKA</h2>
-<p>Timeless Voices, Eternal Melodies</p>
-</div>
+  <div class="hero-content">
+    <h2>CHAGE & ASKA</h2>
+    <p>Timeless Voices, Eternal Melodies</p>
+  </div>
 </section>
 
 <section id="music">
-<h3>DISCOGRAPHY</h3>
+  <h3>DISCOGRAPHY</h3>
 
-<div class="video-grid">
-<div class="video-card">
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM"></iframe>
-</div>
-<h4>SAY YES</h4>
-</div>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM"></iframe>
+      </div>
+      <h4>SAY YES</h4>
+    </div>
 
-<div class="video-card">
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/yfZIaTZJo0o"></iframe>
-</div>
-<h4>YAH YAH YAH</h4>
-</div>
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/yfZIaTZJo0o"></iframe>
+      </div>
+      <h4>YAH YAH YAH</h4>
+    </div>
 
-<div class="video-card">
-<div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/djfjKhzPzGU"></iframe>
-</div>
-<h4>LOVE SONG</h4>
-</div>
-</div>
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/djfjKhzPzGU"></iframe>
+      </div>
+      <h4>LOVE SONG</h4>
+    </div>
+  </div>
 
-<!-- ===== 自動生成ディスコグラフィ ===== -->
-<div class="history">
-<h3>DISCOGRAPHY DETAILS</h3>
-<div class="timeline" id="discography"></div>
-</div>
+  <!-- ★ 追加：年別ディスコグラフィ -->
+  <div class="history">
+    <h3>DISCOGRAPHY DETAILS</h3>
 
-<!-- ===== 既存HISTORYそのまま ===== -->
-<div class="history">
-<h3>HISTORY</h3>
+    <div class="timeline">
 
-<div class="timeline">
-<div class="timeline-item">
-<h4>1979年</h4>
-<p>ポプコンをきっかけにデビュー。「ひとり咲き」で注目。</p>
-</div>
+      <div class="timeline-item">
+        <h4>1979年</h4>
+        <p>シングル：「ひとり咲き」<br>アルバム：「風舞」</p>
+      </div>
 
-<div class="timeline-item">
-<h4>1980年代</h4>
-<p>「万里の河」などヒット。</p>
-</div>
+      <div class="timeline-item">
+        <h4>1980年</h4>
+        <p>シングル：「万里の河」<br>アルバム：「熱風」</p>
+      </div>
 
-<div class="timeline-item">
-<h4>1991年</h4>
-<p>「SAY YES」大ヒット。</p>
-</div>
+      <div class="timeline-item">
+        <h4>1981年</h4>
+        <p>シングル：「男と女」<br>アルバム：「黄昏の騎士」</p>
+      </div>
 
-<div class="timeline-item">
-<h4>1993年</h4>
-<p>「YAH YAH YAH」ミリオン。</p>
-</div>
+      <div class="timeline-item">
+        <h4>1982年</h4>
+        <p>シングル：「北風物語」<br>アルバム：「TURNING POINT」</p>
+      </div>
 
-<div class="timeline-item">
-<h4>2000年代</h4>
-<p>ソロと並行活動。</p>
-</div>
+      <div class="timeline-item">
+        <h4>1985年</h4>
+        <p>シングル：「モーニングムーン」<br>アルバム：「Z=One」</p>
+      </div>
 
-<div class="timeline-item">
-<h4>2007年</h4>
-<p>活動休止。</p>
-</div>
-</div>
-</div>
+      <div class="timeline-item">
+        <h4>1989年</h4>
+        <p>シングル：「DO YA DO」<br>アルバム：「PRIDE」</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>1991年</h4>
+        <p>シングル：「SAY YES」<br>アルバム：「TREE」</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>1993年</h4>
+        <p>シングル：「YAH YAH YAH」<br>アルバム：「RED HILL」</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>1995年</h4>
+        <p>シングル：「On Your Mark」<br>アルバム：「CODE NAME.1」</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>2001年</h4>
+        <p>シングル：「C-46」<br>アルバム：「NOT AT ALL」</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>2007年</h4>
+        <p>活動休止</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 既存HISTORYはそのまま -->
+  <div class="history">
+    <h3>HISTORY</h3>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h4>1979年</h4>
+        <p>ポプコンをきっかけにデビュー。「ひとり咲き」で注目を集める。</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>1980年代</h4>
+        <p>着実に人気を伸ばし、「万里の河」などのヒット曲を発表。</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>1991年</h4>
+        <p>「SAY YES」が大ヒットし社会現象に。</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>1993年</h4>
+        <p>「YAH YAH YAH」がミリオンヒットを記録。</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>2000年代</h4>
+        <p>ソロ活動と並行しながらユニットとしても活動。</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>2007年</h4>
+        <p>活動休止を発表。</p>
+      </div>
+
+    </div>
+  </div>
 
 </section>
 
 <footer>
-<p>© Tribute Site</p>
+  <p>© Tribute Site</p>
 </footer>
 
 <script>
-// ===== スライド =====
-const images=document.querySelectorAll(".hero img");
-let current=0;
-setInterval(()=>{
-images[current].classList.remove("active");
-current=(current+1)%images.length;
-images[current].classList.add("active");
-},3000);
+  const images = document.querySelectorAll(".hero img");
+  let current = 0;
 
-// ===== ディスコグラフィ（1979〜2007）=====
-const data = [
-{year:1979,s:"ひとり咲き",a:"風舞"},
-{year:1980,s:"万里の河",a:"熱風"},
-{year:1981,s:"男と女",a:"黄昏の騎士"},
-{year:1982,s:"北風物語”,a:”熱い想い”},
-{year:1983,s:"MOON LIGHT BLUES”,a:”21世紀”},
-{year:1984,s:"標的",a:"INSIDE"},
-{year:1985,s:"モーニングムーン",a:"Z=One"},
-{year:1986,s:"恋人はワイン色",a:"TURNING POINT"},
-{year:1987,s:"Trip",a:"Mr.ASIA"},
-{year:1988,s:"WALK",a:"RHAPSODY"},
-{year:1989,s:"DO YA DO",a:"PRIDE"},
-{year:1990,s:"太陽と埃の中で",a:"SEE YA"},
-{year:1991,s:"SAY YES",a:"TREE"},
-{year:1992,s:"if",a:"GUYS"},
-{year:1993,s:"YAH YAH YAH",a:"RED HILL"},
-{year:1994,s:"HEART",a:"Code Name.2"},
-{year:1995,s:"On Your Mark",a:"CODE NAME.1"},
-{year:1996,s:"river",a:"NO DOUBT"},
-{year:1997,s:"NとLの野球帽",a:"Best Selection"},
-{year:1998,s:"この愛のために",a:"MTV unplugged"},
-{year:1999,s:"群れ",a:"10 YEARS AFTER"},
-{year:2000,s:"C-46",a:"NOT AT ALL"},
-{year:2001,s:"36度線",a:"NOT AT ALL"},
-{year:2002,s:"Here & There",a:"THE STORY of BALLAD"},
-{year:2003,s:"Man and Woman",a:"DOUBLE"},
-{year:2004,s:"something there",a:"DOUBLE"},
-{year:2005,s:"熱い想い",a:"Single Collection"},
-{year:2006,s:"-",a:"-"},
-{year:2007,s:"活動休止",a:"-"}
-];
-
-// ===== 描画 =====
-const container=document.getElementById("discography");
-
-data.forEach(d=>{
-const div=document.createElement("div");
-div.className="timeline-item";
-
-div.innerHTML=`
-<h4>${d.year}年</h4>
-<p>シングル：${d.s}<br>アルバム：${d.a}</p>
-`;
-
-container.appendChild(div);
-});
+  setInterval(() => {
+    images[current].classList.remove("active");
+    current = (current + 1) % images.length;
+    images[current].classList.add("active");
+  }, 3000);
 </script>
 
 </body>
