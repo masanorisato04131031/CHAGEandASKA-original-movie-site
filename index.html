@@ -1,237 +1,155 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>CHAGE and ASKA Tribute</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>CHAGE and ASKA Tribute</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:"Helvetica Neue", Arial; }
-    body { background:#0a0a0a; color:#fff; }
-
-    header {
-      position: fixed;
-      width: 100%;
-      padding: 20px 40px;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    nav a { margin-left:20px; text-decoration:none; color:#aaa; }
-    nav a:hover { color:#fff; }
-
-    .hero { height:100vh; position:relative; overflow:hidden; }
-    .hero img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; transition:1.5s; }
-    .hero img.active { opacity:1; }
-
-    .hero::after {
-      content:""; position:absolute; width:100%; height:100%;
-      background:rgba(0,0,0,0.5);
-    }
-
-    .hero-content {
-      position:absolute; top:50%; left:50%;
-      transform:translate(-50%,-50%);
-      z-index:2; text-align:center;
-    }
-
-    section { padding:100px 40px; max-width:1100px; margin:auto; }
-
-    h3 {
-      font-size:28px; margin-bottom:30px;
-      border-left:3px solid #fff; padding-left:15px;
-    }
-
-    .video-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
-
-    .video-card {
-      background:#111; padding:15px;
-      border:1px solid #222; transition:0.3s;
-    }
-
-    .video-card:hover { transform:translateY(-5px); border-color:#555; }
-
-    .video-wrapper { position:relative; padding-top:56.25%; }
-    .video-wrapper iframe {
-      position:absolute; top:0; left:0;
-      width:100%; height:100%; border:none;
-    }
-
-    .history { margin-top:80px; }
-
-    .timeline { border-left:2px solid #555; padding-left:20px; }
-
-    .timeline-item { margin-bottom:40px; }
-
-    .timeline-item h4 { font-size:18px; margin-bottom:10px; }
-
-    .timeline-item p { color:#bbb; line-height:1.6; }
-
-    select {
-      margin-bottom:20px;
-      padding:10px;
-      background:#111;
-      color:#fff;
-      border:1px solid #333;
-    }
-
-    footer { text-align:center; padding:40px; color:#777; }
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Helvetica Neue",Arial;}
+body{background:#0a0a0a;color:#fff;}
+header{position:fixed;width:100%;padding:20px 40px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000;display:flex;justify-content:space-between;}
+nav a{margin-left:20px;text-decoration:none;color:#aaa;}
+nav a:hover{color:#fff;}
+.hero{height:100vh;position:relative;overflow:hidden;}
+.hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1.5s;}
+.hero img.active{opacity:1;}
+.hero::after{content:"";position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+.hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;}
+section{padding:100px 40px;max-width:1100px;margin:auto;}
+h3{font-size:28px;margin-bottom:30px;border-left:3px solid #fff;padding-left:15px;}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.video-card{background:#111;padding:15px;border:1px solid #222;transition:0.3s;}
+.video-card:hover{transform:translateY(-5px);border-color:#555;}
+.video-wrapper{position:relative;padding-top:56.25%;}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.history{margin-top:80px;}
+.timeline{border-left:2px solid #555;padding-left:20px;}
+.timeline-item{margin-bottom:40px;}
+.timeline-item h4{font-size:18px;margin-bottom:10px;}
+.timeline-item p{color:#bbb;line-height:1.6;}
+select{margin-bottom:20px;padding:10px;background:#111;color:#fff;border:1px solid #333;}
+footer{text-align:center;padding:40px;color:#777;}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>CHAGE & ASKA</h1>
-  <nav>
-    <a href="#music">MUSIC</a>
-  </nav>
+<h1>CHAGE & ASKA</h1>
+<nav><a href="#music">MUSIC</a></nav>
 </header>
 
 <section class="hero">
-  <img src="image1.jpg" class="active">
-  <img src="image2.jpg">
-  <img src="image3.jpg">
-  <img src="image4.jpg">
-
-  <div class="hero-content">
-    <h2>CHAGE & ASKA</h2>
-    <p>Timeless Voices, Eternal Melodies</p>
-  </div>
+<img src="image1.jpg" class="active">
+<img src="image2.jpg">
+<img src="image3.jpg">
+<img src="image4.jpg">
+<div class="hero-content">
+<h2>CHAGE & ASKA</h2>
+<p>Timeless Voices, Eternal Melodies</p>
+</div>
 </section>
 
 <section id="music">
-  <h3>DISCOGRAPHY</h3>
+<h3>DISCOGRAPHY</h3>
 
-  <div class="video-grid">
-    <div class="video-card">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM"></iframe>
-      </div>
-      <h4>SAY YES</h4>
-    </div>
+<div class="video-grid">
+<div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM"></iframe></div><h4>SAY YES</h4></div>
+<div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yfZIaTZJo0o"></iframe></div><h4>YAH YAH YAH</h4></div>
+<div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/djfjKhzPzGU"></iframe></div><h4>LOVE SONG</h4></div>
+</div>
 
-    <div class="video-card">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/yfZIaTZJo0o"></iframe>
-      </div>
-      <h4>YAH YAH YAH</h4>
-    </div>
+<!-- LIVE -->
+<div class="history">
+<h3>LIVE Setlist</h3>
 
-    <div class="video-card">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/djfjKhzPzGU"></iframe>
-      </div>
-      <h4>LOVE SONG</h4>
-    </div>
-  </div>
+<select id="yearFilter">
+<option value="1980">1980年</option>
+<option value="1981">1981年</option>
+<option value="1982">1982年</option>
+<option value="1983">1983年</option>
+<option value="1984">1984年</option>
+<option value="1985">1985年</option>
+</select>
 
-  <!-- LIVE SETLIST -->
-  <div class="history">
-    <h3>LIVE Setlist</h3>
-
-    <select id="yearFilter">
-      <option value="1980">1980年</option>
-      <option value="1981">1981年</option>
-      <option value="1982">1982年</option>
-      <option value="1983">1983年</option>
-    </select>
-
-    <div id="setlistContainer" class="timeline"></div>
-  </div>
+<div id="setlistContainer" class="timeline"></div>
+</div>
 
 </section>
 
-<footer>
-  <p>© Tribute Site</p>
-</footer>
+<footer><p>© Tribute Site</p></footer>
 
 <script>
 const setlists = {
 
-  "1980":[{title:"旅立ちコンサート",songs:[
-    "追想","私の愛した人","翼","あとまわし","この恋おいらのからまわり",
-    "冬に置きざり","夢から夢へ","冬の恋","風舞","ひとり咲き",
-    "御意見無用","あばんぎゃるど","夏は過ぎて","流恋情歌",
-    "終章(エピローグ)～追想の主題"
-  ]}],
+"1984":[
+{title:"21世紀への招待 Part2",songs:[
+"Darlin'","夢のかなた","RAINBOW","Fifty-Fifty","男と女","私の愛した人",
+"シナリオ","涙・BOY","終章（エピローグ）","MOON LIGHT BLUES","ゆら・ゆら",
+"TIME KEEP DANCER","アルマジロ・ヴギ","御意見無用","ボヘミアン","魅惑",
+"あの娘にハレルヤ～ふたりの愛ランド～あの娘にハレルヤ","ひとり咲き","翼",
+"東京CARRY ON","最後の場面"
+]},
+{title:"INSIDE",songs:[
+"Darlin'","南十字星","夢のかなた","RAINBOW","シナリオ","涙・BOY",
+"終章(エピローグ)","MOON LIGHT BLUES","ふたりの愛ランド",
+"アルマジロ・ヴギ～謎２遊戯～マリオネット～放浪人～黄昏の騎士～長い雨のあとに～荒野～南十字星～幻夜～万里の河～熱い想い～アルマジロ・ヴギ",
+"御意見無用","ボヘミアン","あの娘にハ・レ・ル・ヤ","悲炎","翼",
+"東京CARRY ON","最後の場面","ひとり咲き","声を聞かせて"
+]},
+{title:"SUPER DREAMIN'",songs:[
+"魅惑","マリア","標的","RAINBOW","TIME KEEP DANCER","カーニバル","マリオネット",
+"真夜中の二人","MIDNIGHT 2 CALL","熱風","終章","ひとり咲き","Darlin'",
+"夢のかなた","アルマジロ・ヴギ","幻夜","ボヘミアン","TWILIGHT ZONE",
+"東京CARRY ON","翼～ふたりの愛ランド～翼","MOONLIGHT BLUES","熱い想い"
+]}
+],
 
-  "1981":[
-    {title:"熱風'81",songs:[
-      "翼","幻夜","万里の河","この恋おいらのからまわり","嘘","夢から夢へ",
-      "花暦","ひとり咲き","終章(エピローグ)","熱風","夏は過ぎて",
-      "荒野","悲炎～翼","旅浪人(TABIBITO)","歌いつづける"
-    ]},
-    {title:"ライブ・イン・田園コロシアム The 夏祭り'81",songs:[
-      "序.小倉祇園太鼓～THE夏祭り'81","夏は過ぎて","幻夜","熱風","あとまわし",
-      "流恋情歌","この恋おいらのからまわり","夢から夢へ","嘘","万里の河",
-      "花暦","あばんぎゃるど","御意見無用","私の愛した人","悲炎","翼",
-      "放浪人(TABIBITO)","荒野","歌い続ける","終章（エピローグ）",
-      "真夏の国境","ひとり咲き"
-    ]}
-  ],
-
-  "1982":[
-    {title:"御意見無用'82",songs:[
-      "御意見無用'82","暁","MARGARITA","万里の河","花暦","カーニバル",
-      "終章(エピローグ)","21世紀","誓い","南十字星","魅惑","ひとり咲き",
-      "歌いつづける","熱い想い"
-    ]},
-    {title:"THE 夏祭り'82",songs:[
-      "夏は過ぎて","御意見無用'82","長い雨のあとに","万里の河","カーニバル",
-      "花暦","男と女","21世紀","私の愛した人","翼","暁","魅惑",
-      "誓い","南十字星","悲炎","翼","熱い想い","終章(エピローグ)",
-      "幻夜","旅浪人(TABIBITO)","ひとり咲き","歌いつづける"
-    ]}
-  ],
-
-  "1983":[
-    {title:"21世紀への招待パート１",songs:[
-      "自由","闇","21世紀","熱風","真夏の国境","安息の日々","翼",
-      "眠ったハートに火をつけて","マリオネット","Fifty-Fifty",
-      "終章（エピローグ）","カーニバル","私の愛した人","御意見無用",
-      "謎2遊戯","ボヘミアン","誓い","魅惑","荒野","南十字星",
-      "あの娘にハレルヤ","華やかに傷ついて","ひとり咲き"
-    ]}
-  ]
+"1985":[
+{title:"SHAKIN' NIGHT",songs:[
+"SHAKIN'NIGHT","誘惑のベルが鳴る","夢のかなた","眠ったハートに火をつけて",
+"標的","モーニングムーン","マドンナ","オンリーロンリー","ロンリーガール",
+"J's LIFE","夢じかけロマンス","MOON LIGHT BLUES","シャララ","アルマジロ・ヴギ",
+"くちびる","ボヘミアン","マリア","棘","TWILIGHT ZONE","東京CARRY ON",
+"夢から夢へ","熱い想い","Darlin'","SHAKIN' NIGHT"
+]},
+{title:"THE 夏祭り'85",songs:[
+"SHAKIN'NIGHT","誘惑のベルが鳴る","眠ったハートに火をつけて","標的",
+"マリオネット","万里の河","夏は過ぎて","私の愛した人","オンリーロンリー",
+"星屑のシャンデリア","終章","熱い想い","HAPPY BIRTHDAY FOR ME","ボヘミアン",
+"アルマジロ・ヴギ","南十字星","夢のかなた","あの娘にハ・レ・ル・ヤ",
+"マリア","棘","TWILIGHT ZONE","魅惑","声を聞かせて","MOON LIGHT BLUES","ひとり咲き"
+]}
+]
 
 };
 
 function renderSetlist(year){
-  const container=document.getElementById("setlistContainer");
-  const data=setlists[year];
-
-  if(!data){container.innerHTML="<p>データ準備中</p>";return;}
-
-  let html="";
-  data.forEach(live=>{
-    let songs="";
-    live.songs.forEach((s,i)=>{songs+=`${i+1}. ${s}<br>`;});
-    html+=`<div class="timeline-item"><h4>${year}年『${live.title}』</h4><p>${songs}</p></div>`;
-  });
-
-  container.innerHTML=html;
+const container=document.getElementById("setlistContainer");
+const data=setlists[year];
+if(!data){container.innerHTML="<p>データ準備中</p>";return;}
+let html="";
+data.forEach(live=>{
+let songs="";
+live.songs.forEach((s,i)=>{songs+=`${i+1}. ${s}<br>`;});
+html+=`<div class="timeline-item"><h4>${year}年『${live.title}』</h4><p>${songs}</p></div>`;
+});
+container.innerHTML=html;
 }
 
-renderSetlist("1980");
+renderSetlist("1984");
 
 document.getElementById("yearFilter").addEventListener("change",(e)=>{
-  renderSetlist(e.target.value);
+renderSetlist(e.target.value);
 });
 
 const images=document.querySelectorAll(".hero img");
 let current=0;
 setInterval(()=>{
-  images[current].classList.remove("active");
-  current=(current+1)%images.length;
-  images[current].classList.add("active");
+images[current].classList.remove("active");
+current=(current+1)%images.length;
+images[current].classList.add("active");
 },3000);
 </script>
 
