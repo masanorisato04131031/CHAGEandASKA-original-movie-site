@@ -8,105 +8,28 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Helvetica Neue",Arial;}
 body{background:#0a0a0a;color:#fff;}
-
-header{
-position:fixed;width:100%;padding:20px 40px;
-background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);
-z-index:1000;display:flex;justify-content:space-between;
-}
-
+header{position:fixed;width:100%;padding:20px 40px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000;display:flex;justify-content:space-between;}
 nav a{margin-left:20px;text-decoration:none;color:#aaa;}
 nav a:hover{color:#fff;}
-
 .hero{height:100vh;position:relative;overflow:hidden;}
 .hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1.5s;}
 .hero img.active{opacity:1;}
-
-.hero::after{
-content:"";position:absolute;width:100%;height:100%;
-background:linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.8));
-}
-
-.hero-content{
-position:absolute;top:50%;left:50%;
-transform:translate(-50%,-50%);
-z-index:2;text-align:center;
-}
-
+.hero::after{content:"";position:absolute;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.8));}
+.hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;}
 section{padding:100px 40px;max-width:1100px;margin:auto;}
-
-h3{
-font-size:28px;margin-bottom:30px;
-border-left:3px solid #fff;padding-left:15px;
-}
-
-.video-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.video-card{
-background:#111;padding:15px;border:1px solid #222;
-transition:0.3s;border-radius:10px;
-}
-
-.video-card:hover{
-transform:translateY(-8px);
-border-color:#777;
-box-shadow:0 10px 30px rgba(255,255,255,0.1);
-}
-
+h3{font-size:28px;margin-bottom:30px;border-left:3px solid #fff;padding-left:15px;}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.video-card{background:#111;padding:15px;border:1px solid #222;border-radius:10px;transition:0.3s;}
+.video-card:hover{transform:translateY(-8px);border-color:#777;box-shadow:0 10px 30px rgba(255,255,255,0.1);}
 .video-wrapper{position:relative;padding-top:56.25%;}
-.video-wrapper iframe{
-position:absolute;top:0;left:0;width:100%;height:100%;border:none;
-}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
 
-/* 年ボタン */
-.year-buttons{
-display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;
-}
-
-.year-btn{
-padding:10px 16px;border:1px solid #333;background:#111;
-cursor:pointer;border-radius:20px;transition:0.3s;
-}
-
-.year-btn:hover{border-color:#fff;}
-
-.year-btn.active{
-background:#fff;color:#000;
-box-shadow:0 0 10px rgba(255,255,255,0.8);
-}
-
-/* カード */
-.live-card{
-background:linear-gradient(145deg,#111,#0a0a0a);
-border:1px solid #222;padding:20px;margin-bottom:20px;
-border-radius:15px;transition:0.4s;
-}
-
-.live-card:hover{
-transform:translateY(-6px);
-border-color:#888;
-box-shadow:0 15px 40px rgba(0,0,0,0.8);
-}
-
-.song{
-display:flex;margin-bottom:6px;color:#bbb;
-}
-
-.song span{
-width:30px;color:#fff;font-weight:bold;
-}
-
-.fade{
-opacity:0;transform:translateY(20px);transition:0.6s;
-}
-.fade.show{
-opacity:1;transform:translateY(0);
-}
-
+.year-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
+.year-btn{padding:10px 16px;border:1px solid #333;background:#111;cursor:pointer;border-radius:20px;transition:0.3s;}
+.year-btn.active{background:#fff;color:#000;box-shadow:0 0 10px rgba(255,255,255,0.8);}
+.live-card{background:#111;border:1px solid #222;padding:20px;margin-bottom:20px;border-radius:10px;}
+.song{display:flex;margin-bottom:5px;color:#bbb;}
+.song span{width:30px;color:#fff;font-weight:bold;}
 footer{text-align:center;padding:40px;color:#777;}
 </style>
 </head>
@@ -140,79 +63,98 @@ footer{text-align:center;padding:40px;color:#777;}
 
 <div class="history">
 <h3>LIVE Setlist</h3>
-
 <div id="yearButtons" class="year-buttons"></div>
 <div id="setlistContainer"></div>
-
 </div>
+
 </section>
 
 <footer><p>© Tribute Site</p></footer>
 
 <script>
 
-/* ★ 全年データ復元 */
 const setlists={
 
-"1980":[{title:"旅立ちコンサート",songs:["追想","私の愛した人","翼","あとまわし","この恋おいらのからまわり","冬に置きざり","夢から夢へ","冬の恋","風舞","ひとり咲き","御意見無用","あばんぎゃるど","夏は過ぎて","流恋情歌","終章"]}],
+"1980":[{title:"旅立ちコンサート",songs:[
+"追想","私の愛した人","翼","あとまわし","この恋おいらのからまわり","冬に置きざり","夢から夢へ","冬の恋","風舞","ひとり咲き","御意見無用","あばんぎゃるど","夏は過ぎて","流恋情歌","終章(エピローグ)～追想の主題"
+]}],
 
-"1981":[{title:"熱風'81",songs:["翼","幻夜","万里の河"]}],
+"1981":[
+{title:"熱風'81",songs:[
+"翼","幻夜","万里の河","この恋おいらのからまわり","嘘","夢から夢へ","花暦","ひとり咲き","終章(エピローグ)","熱風","夏は過ぎて","荒野","悲炎～翼","旅浪人(TABIBITO)","歌いつづける"
+]},
+{title:"ライブ・イン・田園コロシアム The 夏祭り'81",songs:[
+"小倉祇園太鼓～THE夏祭り'81","夏は過ぎて","幻夜","熱風","あとまわし","流恋情歌","この恋おいらのからまわり","夢から夢へ","嘘","万里の河","花暦","あばんぎゃるど","御意見無用","私の愛した人","悲炎","翼","放浪人(TABIBITO)","荒野","歌い続ける","終章（エピローグ）","真夏の国境","ひとり咲き"
+]}
+],
 
-"1982":[{title:"御意見無用'82",songs:["御意見無用'82","暁"]}],
+"1982":[
+{title:"御意見無用'82",songs:[
+"御意見無用'82","暁","MARGARITA","万里の河","花暦","カーニバル","終章(エピローグ)","21世紀","誓い","南十字星","魅惑","ひとり咲き","歌いつづける","熱い想い"
+]},
+{title:"THE 夏祭り'82",songs:[
+"夏は過ぎて","御意見無用'82","長い雨のあとに","万里の河","カーニバル","花暦","男と女","21世紀","私の愛した人","翼","暁","魅惑","誓い","南十字星","悲炎","翼","熱い想い","終章(エピローグ)","幻夜","旅浪人(TABIBITO)","ひとり咲き","歌いつづける"
+]}
+],
 
-"1983":[{title:"21世紀への招待パート１",songs:["自由","闇","21世紀"]}],
+"1983":[{title:"21世紀への招待パート１",songs:[
+"自由","闇","21世紀","熱風","真夏の国境","安息の日々","翼","眠ったハートに火をつけて","マリオネット","Fifty-Fifty","終章（エピローグ）","カーニバル","私の愛した人","御意見無用","謎2遊戯","ボヘミアン","誓い","魅惑","荒野","南十字星","あの娘にハレルヤ","華やかに傷ついて","ひとり咲き"
+]}],
 
-"1984":[{title:"21世紀への招待 Part2",songs:["Darlin'","夢のかなた","RAINBOW"]}],
+"1984":[
+{title:"21世紀への招待 Part2",songs:[
+"Darlin'","夢のかなた","RAINBOW","Fifty-Fifty","男と女","私の愛した人","シナリオ","涙・BOY","終章（エピローグ）","MOON LIGHT BLUES","ゆら・ゆら","TIME KEEP DANCER","アルマジロ・ヴギ","御意見無用","ボヘミアン","魅惑","あの娘にハレルヤ～ふたりの愛ランド～あの娘にハレルヤ","ひとり咲き","翼","東京CARRY ON","最後の場面"
+]},
+{title:"INSIDE",songs:[
+"Darlin'","南十字星","夢のかなた","RAINBOW","シナリオ","涙・BOY","終章(エピローグ)","MOON LIGHT BLUES","ふたりの愛ランド","アルマジロ・ヴギ～謎２遊戯～マリオネット～放浪人～黄昏の騎士～長い雨のあとに～荒野～南十字星～幻夜～万里の河～熱い想い～アルマジロ・ヴギ","御意見無用","ボヘミアン","あの娘にハ・レ・ル・ヤ","悲炎","翼","東京CARRY ON","最後の場面","ひとり咲き","声を聞かせて"
+]},
+{title:"SUPER DREAMIN'",songs:[
+"魅惑","マリア(Back To The City)","標的(ターゲット)","RAINBOW","TIME KEEP DANCER","カーニバル","マリオネット","真夜中の二人","MIDNIGHT 2 CALL","熱風","終章(エピローグ)","ひとり咲き","Darlin'","夢のかなた","アルマジロ・ヴギ","幻夜","ボヘミアン","TWILIGHT ZONE","東京CARRY ON","翼～ふたりの愛ランド～翼","MOONLIGHT BLUES","熱い想い"
+]}
+],
 
-"1985":[{title:"SHAKIN' NIGHT",songs:["SHAKIN'NIGHT","誘惑のベルが鳴る"]}]
+"1985":[
+{title:"SHAKIN' NIGHT",songs:[
+"SHAKIN'NIGHT","誘惑のベルが鳴る","夢のかなた","眠ったハートに火をつけて","標的(ターゲット)","モーニングムーン","マドンナ","オンリーロンリー","ロンリーガール","J's LIFE","夢じかけロマンス","MOON LIGHT BLUES","シャララ","アルマジロ・ヴギ","くちびる","ボヘミアン","マリア(Back To The City)","棘","TWILIGHT ZONE","東京CARRY ON","夢から夢へ","熱い想い","Darlin'","SHAKIN' NIGHT"
+]},
+{title:"THE 夏祭り'85",songs:[
+"SHAKIN'NIGHT","誘惑のベルが鳴る","眠ったハートに火をつけて","標的(ターゲット)","マリオネット","万里の河","夏は過ぎて","私の愛した人","オンリーロンリー","星屑のシャンデリア","終章(エピローグ)","熱い想い","HAPPY BIRTHDAY FOR ME","ボヘミアン","アルマジロ・ヴギ","南十字星","夢のかなた","あの娘にハ・レ・ル・ヤ","マリア(Back To The City)","棘","TWILIGHT ZONE","魅惑","声を聞かせて","MOON LIGHT BLUES","ひとり咲き"
+]}
+]
 
 };
 
 /* ボタン生成 */
 const yearButtons=document.getElementById("yearButtons");
-
 Object.keys(setlists).forEach(year=>{
 const btn=document.createElement("div");
 btn.className="year-btn";
 btn.innerText=year;
-
 btn.onclick=()=>{
 document.querySelectorAll(".year-btn").forEach(b=>b.classList.remove("active"));
 btn.classList.add("active");
 render(year);
 };
-
 yearButtons.appendChild(btn);
 });
 
-/* 描画 */
 function render(year){
 const container=document.getElementById("setlistContainer");
-const data=setlists[year];
-
 let html="";
-data.forEach(live=>{
+setlists[year].forEach(live=>{
 let songs="";
 live.songs.forEach((s,i)=>{
 songs+=`<div class="song"><span>${i+1}</span>${s}</div>`;
 });
-
-html+=`<div class="live-card fade"><h4>${year}年『${live.title}』</h4>${songs}</div>`;
+html+=`<div class="live-card"><h4>${year}年『${live.title}』</h4>${songs}</div>`;
 });
-
 container.innerHTML=html;
-
-setTimeout(()=>{
-document.querySelectorAll(".fade").forEach(el=>el.classList.add("show"));
-},100);
 }
 
-/* 初期 */
 const first=document.querySelector(".year-btn");
 first.classList.add("active");
 render(first.innerText);
 
-/* スライド */
 const images=document.querySelectorAll(".hero img");
 let current=0;
 setInterval(()=>{
