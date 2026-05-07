@@ -445,8 +445,11 @@ songs:[
 
 /* ===== 1988 ===== */
 "1988":[
-{title:"コンサートツアー'88",songs:["LONDON POWER TOWN","ラプソディ","恋人はワイン色","ripple ring","風のライオン","Trip","レノンのミスキャスト","MIDNIGHT 2 CALL","ミステリー","失恋男のモンタージユ","あきらめのBlue Day","BELIEVE IT?","SAILOR MAN","Mr.ASIA","モーニングムーン","TURNING POINT","熱い想い","MOON LIGHT BLUES","幻夜","黄昏を待たずに","ロマンシングヤード"]},
-{title:"コンサートツアー1988 X'mas Special",songs:["Love Affair","LONDON POWER TOWN","ラプソデイ","恋人はワイン色","Trip","赤いベッド","レノンのミスキャスト","SCENE","伝わりますか","Far Away","憧れ","シルバーパラダイス","黄昏を待たずに","モーニングムーン","スローダウン","Energy","BELIEVE IT?","TURNING POINT","ripple ring","憧れ"]}
+{title:"コンサートツアー'88",songs:["LONDON POWER TOWN","ラプソディ","恋人はワイン色","ripple ring","風のライオン","Trip","レノンのミスキャスト","MIDNIGHT 2 CALL","ミステリー","失恋男のモンタージユ","あきらめのBlue Day","BELIEVE IT?","SAILOR MAN","Mr.ASIA","モーニングムーン","TURNING POINT","熱い想い","MOON LIGHT BLUES","幻夜","黄昏を待たずに","ロマンシングヤード"]
+},
+{
+{title:"コンサートツアー1988 X'mas Special",songs:["Love Affair","LONDON POWER TOWN","ラプソデイ","恋人はワイン色","Trip","赤いベッド","レノンのミスキャスト","SCENE","伝わりますか","Far Away","憧れ","シルバーパラダイス","黄昏を待たずに","モーニングムーン","スローダウン","Energy","BELIEVE IT?","TURNING POINT","ripple ring","憧れ"]
+}
 ],
 
 /* ===== 1989 ===== */
