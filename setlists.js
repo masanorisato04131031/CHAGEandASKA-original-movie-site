@@ -61,8 +61,8 @@ window.setlists = {
 ]},
 {title:"MULTIMAXコンサートツアー『MAX TOOL』",songs:[
 "MOFU","MULTI MAXのテーマ","SO SO","I JUST WANNA SLEEP","NO EXCUSE","LOVE","RAINY DAY","島の娘","僕と君のように","BELIEVE","遠い街から","SOME DAY","MILKEY WAY BLUES","SURPRISE","WORKING","DEEP","THAT'S LIFE","MEBIUS","WINDY ROAD","勇気の言葉"
-  
-]
+]}
+]]
 }
 ],
 
