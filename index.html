@@ -6,29 +6,163 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Helvetica Neue",Arial;}
-body{background:#0a0a0a;color:#fff;}
-header{position:fixed;width:100%;padding:20px 40px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000;display:flex;justify-content:space-between;}
-nav a{margin-left:20px;text-decoration:none;color:#aaa;}
-nav a:hover{color:#fff;}
-.hero{height:100vh;position:relative;overflow:hidden;}
-.hero img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:1.5s;}
-.hero img.active{opacity:1;}
-.hero::after{content:"";position:absolute;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.8));}
-.hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;}
-section{padding:100px 40px;max-width:1100px;margin:auto;}
-h3{font-size:28px;margin-bottom:30px;border-left:3px solid #fff;padding-left:15px;}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
-.video-card{background:#111;padding:15px;border:1px solid #222;border-radius:10px;}
-.video-wrapper{position:relative;padding-top:56.25%;}
-.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
-.year-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
-.year-btn{padding:10px 16px;border:1px solid #333;background:#111;cursor:pointer;border-radius:20px;}
-.year-btn.active{background:#fff;color:#000;}
-.live-card{background:#111;border:1px solid #222;padding:20px;margin-bottom:20px;border-radius:10px;}
-.song{display:flex;margin-bottom:5px;color:#bbb;}
-.song span{width:30px;color:#fff;font-weight:bold;}
-footer{text-align:center;padding:40px;color:#777;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Helvetica Neue",Arial;
+}
+
+body{
+  background:#0a0a0a;
+  color:#fff;
+}
+
+header{
+  position:fixed;
+  width:100%;
+  padding:20px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#aaa;
+}
+
+nav a:hover{
+  color:#fff;
+}
+
+.hero{
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:1.5s;
+}
+
+.hero img.active{
+  opacity:1;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.8)
+  );
+}
+
+.hero-content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  text-align:center;
+}
+
+section{
+  padding:100px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h3{
+  font-size:28px;
+  margin-bottom:30px;
+  border-left:3px solid #fff;
+  padding-left:15px;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.video-card{
+  background:#111;
+  padding:15px;
+  border:1px solid #222;
+  border-radius:10px;
+}
+
+.video-wrapper{
+  position:relative;
+  padding-top:56.25%;
+}
+
+.video-wrapper iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.year-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.year-btn{
+  padding:10px 16px;
+  border:1px solid #333;
+  background:#111;
+  cursor:pointer;
+  border-radius:20px;
+}
+
+.year-btn.active{
+  background:#fff;
+  color:#000;
+}
+
+.live-card{
+  background:#111;
+  border:1px solid #222;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:10px;
+}
+
+.song{
+  display:flex;
+  margin-bottom:5px;
+  color:#bbb;
+}
+
+.song span{
+  width:30px;
+  color:#fff;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:#777;
+}
 </style>
 </head>
 
@@ -36,7 +170,9 @@ footer{text-align:center;padding:40px;color:#777;}
 
 <header>
 <h1>CHAGE & ASKA</h1>
-<nav><a href="#music">MUSIC</a></nav>
+<nav>
+<a href="#music">MUSIC</a>
+</nav>
 </header>
 
 <section class="hero">
@@ -44,6 +180,7 @@ footer{text-align:center;padding:40px;color:#777;}
 <img src="image2.jpg">
 <img src="image3.jpg">
 <img src="image4.jpg">
+
 <div class="hero-content">
 <h2>CHAGE & ASKA</h2>
 <p>Timeless Voices, Eternal Melodies</p>
@@ -51,25 +188,48 @@ footer{text-align:center;padding:40px;color:#777;}
 </section>
 
 <section id="music">
+
 <h3>DISCOGRAPHY</h3>
 
 <div class="video-grid">
-<div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM"></iframe></div><h4>SAY YES</h4></div>
-<div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yfZIaTZJo0o"></iframe></div><h4>YAH YAH YAH</h4></div>
-<div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/djfjKhzPzGU"></iframe></div><h4>LOVE SONG</h4></div>
+
+<div class="video-card">
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/Q9qAyt0G-jM"></iframe>
+</div>
+<h4>SAY YES</h4>
+</div>
+
+<div class="video-card">
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/yfZIaTZJo0o"></iframe>
+</div>
+<h4>YAH YAH YAH</h4>
+</div>
+
+<div class="video-card">
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/djfjKhzPzGU"></iframe>
+</div>
+<h4>LOVE SONG</h4>
+</div>
+
 </div>
 
 <h3>LIVE Setlist</h3>
+
 <div id="yearButtons" class="year-buttons"></div>
+
 <div id="setlistContainer"></div>
 
 </section>
 
-<footer><p>© Tribute Site</p></footer>
+<footer>
+<p>© Tribute Site</p>
+</footer>
 
-<!-- 順番が命 -->
 <script src="setlists.js"></script>
 <script src="main.js"></script>
-  
+
 </body>
 </html>
