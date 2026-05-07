@@ -588,9 +588,20 @@ songs:[
 "WALK",
 "SAY YES",
 "BIG TREE"
-]
+]}
+],
+
+"1992":[
+{title:"CHAGE&ASKAコンサートツアー『BIG TREE』",songs:[
+"太陽と埃の中で","Love Affair","DO YA DO","CATCH & RELEASE","Trip","迷宮のReplicant","追想","終章","けれど空は青-close friend-","遠い街から","LOVE","はじまりはいつも雨","ひとり咲き","LOVE SONG","モーニングムーン","モナリザの背中よりも","Energy","SAY YES","僕はこの瞳で嘘をつく","Mr.ASIA","ロマンシングヤード","WALK","BIG TREE"
+]},
+{title:"MULTIMAXコンサートツアー『MAX TOOL』",songs:[
+"MOFU","MULTI MAXのテーマ","SO SO","I JUST WANNA SLEEP","NO EXCUSE","LOVE","RAINY DAY","島の娘","僕と君のように","BELIEVE","遠い街から","SOME DAY","MILKEY WAY BLUES","SURPRISE","WORKING","DEEP","THAT'S LIFE","MEBIUS","WINDY ROAD","勇気の言葉"
+]}
+]]
 }
 ],
+
 
 /* ===== 1993 ===== */
 
