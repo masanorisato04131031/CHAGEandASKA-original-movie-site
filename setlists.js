@@ -1,9 +1,6 @@
 window.setlists = {
 
 /* ===== 1980 ===== */
-window.setlists = {
-
-/* ===== 1980 ===== */
 "1980":[
 {
 title:"旅立ちコンサート",
@@ -588,23 +585,68 @@ songs:[
 "WALK",
 "SAY YES",
 "BIG TREE"
-]}
-],
-
-"1992":[
-{title:"CHAGE&ASKAコンサートツアー『BIG TREE』",songs:[
-"太陽と埃の中で","Love Affair","DO YA DO","CATCH & RELEASE","Trip","迷宮のReplicant","追想","終章","けれど空は青-close friend-","遠い街から","LOVE","はじまりはいつも雨","ひとり咲き","LOVE SONG","モーニングムーン","モナリザの背中よりも","Energy","SAY YES","僕はこの瞳で嘘をつく","Mr.ASIA","ロマンシングヤード","WALK","BIG TREE"
-]},
-{title:"MULTIMAXコンサートツアー『MAX TOOL』",songs:[
-"MOFU","MULTI MAXのテーマ","SO SO","I JUST WANNA SLEEP","NO EXCUSE","LOVE","RAINY DAY","島の娘","僕と君のように","BELIEVE","遠い街から","SOME DAY","MILKEY WAY BLUES","SURPRISE","WORKING","DEEP","THAT'S LIFE","MEBIUS","WINDY ROAD","勇気の言葉"
-]}
-]]
+]
 }
 ],
 
+/* ===== 1992 ===== */
+"1992":[
+{
+title:"CHAGE&ASKAコンサートツアー『BIG TREE』",
+songs:[
+"太陽と埃の中で",
+"Love Affair",
+"DO YA DO",
+"CATCH & RELEASE",
+"Trip",
+"迷宮のReplicant",
+"追想",
+"終章",
+"けれど空は青-close friend-",
+"遠い街から",
+"LOVE",
+"はじまりはいつも雨",
+"ひとり咲き",
+"LOVE SONG",
+"モーニングムーン",
+"モナリザの背中よりも",
+"Energy",
+"SAY YES",
+"僕はこの瞳で嘘をつく",
+"Mr.ASIA",
+"ロマンシングヤード",
+"WALK",
+"BIG TREE"
+]
+},
+{
+title:"MULTIMAXコンサートツアー『MAX TOOL』",
+songs:[
+"MOFU",
+"MULTI MAXのテーマ",
+"SO SO",
+"I JUST WANNA SLEEP",
+"NO EXCUSE",
+"LOVE",
+"RAINY DAY",
+"島の娘",
+"僕と君のように",
+"BELIEVE",
+"遠い街から",
+"SOME DAY",
+"MILKEY WAY BLUES",
+"SURPRISE",
+"WORKING",
+"DEEP",
+"THAT'S LIFE",
+"MEBIUS",
+"WINDY ROAD",
+"勇気の言葉"
+]
+}
+],
 
 /* ===== 1993 ===== */
-
 "1993":[
 {
 title:"SPECIAL EVENT 1993 GUYS ～夢の番人～",
@@ -633,11 +675,9 @@ songs:[
 "no no darlin'"
 ]
 }
-]
-,
+],
 
 /* ===== 1994 ===== */
-
 "1994":[
 {
 title:"CHAGE&ASKA『ASIAN TOUR 1994』",
@@ -692,7 +732,6 @@ songs:[
 ],
 
 /* ===== 1995 ===== */
-
 "1995":[
 {
 title:"CHAGE&ASKA『CONCERT TOUR'95～'96 SUPER BEST 3 MISSION IMPOSSIBLE』",
@@ -749,4 +788,5 @@ songs:[
 ]
 }
 ]
+
 };
