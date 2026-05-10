@@ -699,6 +699,32 @@ songs:[
 "ロマンシングヤード",
 "no no darlin'"
 ]
+},
+{
+title:"史上最大の作戦 THE LONGEST TOUR 1993～1994",
+songs:[
+"夜明けは沈黙の中へ",
+"なぜに君は帰らない",
+"GUYS",
+"SAY YES",
+"CATCH & RELEASE",
+"HANG UP THE PHONE",
+"LOVE SONG",
+"no no darlin'",
+"TAO",
+"You are free",
+"蛍",
+"今夜ちょっとさ",
+"Son and Daughter～それより僕が伝えたいのは",
+"RED HILL",
+"THE TIME",
+"Mr.Jの悲劇は岩より重い",
+"僕はこの瞳で嘘をつく",
+"YAH YAH YAH",
+"ロマンシングヤード",
+"PRIDE",
+"野いちごがゆれるように"
+]
 }
 ],
 
